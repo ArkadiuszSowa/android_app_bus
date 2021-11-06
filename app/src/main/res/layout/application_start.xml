@@ -12,57 +12,52 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
+
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ODEBRANE"
-            android:layout_marginTop="20dp"
+            android:text="ZACZYNAMY TO ZAMIESZANIE"
+            tools:ignore="MissingConstraints"
+            android:layout_marginTop="300dp"
             android:gravity="center"
-            android:textSize="20sp"/>
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="60dp" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="WYSLANE"
-            android:gravity="center"
-            android:textSize="20sp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="60dp" />
+            android:layout_marginBottom="14dp"
+            android:textSize="20dp"/>
 
         <Button
             android:id="@+id/buttonONOFF"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ON/OFF"
-            android:layout_marginTop="100dp"
-            android:layout_marginRight="200dp"
-            android:layout_marginLeft="40dp"/>
+            android:text="URZADZENIA BLUETOOTH"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:onClick="OnButtonClickFind" />
 
         <Button
             android:id="@+id/buttonSave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ZAPISZ"
-            android:layout_marginTop="100dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginLeft="200dp"/>
+            android:text="KOMUNIKACJA: BLUETOOTH"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:onClick="OnButtonClickBuletoothCommunication"/>
 
         <Button
             android:id="@+id/buttonSend"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="WYSLIJ"
-            android:layout_marginRight="40dp"
-            android:layout_marginLeft="200dp"/>
+            android:text="KOMUNIKACJA: SERWER"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:onClick="OnButtonClickServerCommunication"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
