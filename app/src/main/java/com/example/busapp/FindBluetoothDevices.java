@@ -2,6 +2,7 @@ package com.example.busapp;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -17,17 +18,20 @@ import java.util.Collections;
 
 public class FindBluetoothDevices {
 
-    private BluetoothAdapter bluetoothAdapter;
     public ArrayList<BluetoothDevice> listItems = new ArrayList<>();
     public BluetoothDevice espDevice;
     public String ESP_ADRESS = "E0:E2:E6:D1:08:0E";
 
-    public void findBluetoothDevices() {
+    public void findBluetoothDevices(BluetoothAdapter bluetoothAdapter) {
         listItems.clear();
+        Log.d("URZADZENIA", "findBluetoothDevices");
         if (bluetoothAdapter != null) {
+            Log.d("URZADZENIA", "bluetoothAdapter != null");
             for (BluetoothDevice device : bluetoothAdapter.getBondedDevices())
-                if (device.getType() != BluetoothDevice.DEVICE_TYPE_LE)
+                if (device.getType() != BluetoothDevice.DEVICE_TYPE_LE) {
                     listItems.add(device);
+                    Log.d("URZADZENIA", device.toString());
+                }
         }
         Collections.sort(listItems, FindBluetoothDevices::compareTo);
 
@@ -50,10 +54,11 @@ public class FindBluetoothDevices {
     public void findESP() {
 
         for (int i = 0; i < listItems.size(); i++) {
-           String listelement = listItems.get(i).getAddress();
-           if(listelement == ESP_ADRESS){
-              espDevice = listItems.get(i);
-           }
+            String listelement = listItems.get(i).getAddress();
+            if (listelement == ESP_ADRESS) {
+                espDevice = listItems.get(i);
+                Log.d("znalezione", espDevice.toString());
+            }
         }
     }
 }

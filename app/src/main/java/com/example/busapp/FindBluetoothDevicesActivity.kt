@@ -15,7 +15,6 @@ import kotlin.collections.contains as contains1
 
 class FindBluetoothDevicesActivity : AppCompatActivity() {
 
-    private var bluetoothAdapter: BluetoothAdapter? = null
     private val listItems = ArrayList<BluetoothDevice>()
 
 
@@ -23,20 +22,14 @@ class FindBluetoothDevicesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_find_bluetooth_devices)
 
-
-        if (applicationContext.getPackageManager()
-                ?.hasSystemFeature(PackageManager.FEATURE_BLUETOOTH) == true
-        )
-            bluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
+        var siema = intent.getStringExtra("siema")
 
         var text2: TextView = findViewById<TextView>(R.id.bluetoothElement1)
 
         var bluetoothDevices = FindBluetoothDevices();
 
-        bluetoothDevices.findBluetoothDevices();
-        bluetoothDevices.findESP();
 
-        if (bluetoothDevices.espDevice != null) {
+        if (siema == "POLACZONO") {
             text2.setText("POLOCZONO")
         } else {
             text2.setText("NIEPOLOCZONO")
