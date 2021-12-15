@@ -35,7 +35,6 @@ public class FindBluetoothDevices {
         }
         Collections.sort(listItems, FindBluetoothDevices::compareTo);
 
-
     }
 
     static int compareTo(BluetoothDevice a, BluetoothDevice b) {
